@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes, { func } from 'prop-types';
 import styled from 'styled-components';
 
 const ContactItem = styled.li`
@@ -25,7 +26,7 @@ const ContactButton = styled.button`
   outline: none;
 `;
 
-function ContactListItem({ id, name, number, onDelete }) {
+function ContactListItem({ name, number, onDelete }) {
   return (
     <ContactItem>
       <span>
@@ -36,6 +37,12 @@ function ContactListItem({ id, name, number, onDelete }) {
       </ContactButton>
     </ContactItem>
   );
+}
+
+ContactListItem.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  onDelete: func,
 }
 
 export default ContactListItem;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const FilterContainer = styled.div`
@@ -29,6 +30,11 @@ function Filter({ value, onChangeFilter }) {
       </InputLabel>
     </FilterContainer>
   );
+}
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChangeFilter: PropTypes.func,
 }
 
 export default Filter;

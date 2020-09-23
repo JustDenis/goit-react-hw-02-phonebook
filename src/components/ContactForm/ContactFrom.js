@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const PhonebookForm = styled.form`
@@ -29,6 +30,10 @@ const PhonebookButton = styled.button`
 `;
 
 export default class ContactForm extends Component {
+  static propTypes = {
+    onAddContact: PropTypes.func,
+  }
+
   state = {
     name: '',
     number: '',

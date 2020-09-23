@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes, { object } from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -13,6 +14,10 @@ function Layout({children}) {
             {children}
         </Section>
     )
+}
+
+Layout.propTypes = {
+    children: PropTypes.arrayOf(object),
 }
 
 export default Layout;
